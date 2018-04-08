@@ -4,15 +4,19 @@ const Schema = mongoose.Schema;
 const molderSchema = new Schema({
   nom: { 
       type: String, 
-      required: true,
-      min: [6],
-      max: 119 
+      required: true 
+  },
+  firstName: {
+      type: String,
+      required: true
+  },
+  lastName: {
+      type: String,
+      required: true
   },
   password: { 
       type: String, 
-      required: true,
-      min: [6],
-      max: 119
+      required: true
   }
 });
 

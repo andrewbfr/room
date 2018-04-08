@@ -1,30 +1,35 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Clock from './components/Clock';
-import Hello from './components/Hello';
-import User from './components/User';
-import Jumbotron from './components/Jumbotron';
-import Footer from './components/Footer';
-import Aside from './components/Aside';
-import ErrorMsg  from './components/Error';
-import Table from './components/Table';
-import Toast from './components/Toast';
-import Submit from './components/Submit';
+import NavBar from './components/NavBar';
+import Login from './pages/Login';
+import Calendar from './pages/Calendar';
+import Report from './pages/Report';
+import Ski from './pages/Ski';
+import Inventory from './pages/Inventory';
+import MaterialReq from './pages/MaterialReq';
+import Profile from './pages/Profile';
+import QC from './pages/QC';
+import NoMatch from './pages/NoMatch';
 
-class App extends Component {
-    render() {
-        return (
-            <div>
-                <Jumbotron />
-                <Aside />
-                <ErrorMsg />
-                <Toast />
-                <Table />
-                <Footer />
-            </div>
-        )
-    }
-}
+
+const App = () => 
+    <Router>
+        <div>
+            <NavBar />
+            <Switch>
+                <Route exact= {true} path="/" component={Login} />
+                <Route exact= {true} path="/calendar" component={Calendar} />
+                <Route exact= {true} path="/inventory" component={Inventory} />
+                <Route exact= {true} path="/materialreq" component={MaterialReq} />
+                <Route exact= {true} path="/profile" component={Profile} />
+                <Route exact= {true} path="/qc" component={QC} />
+                <Route exact= {true} path="/report" component={Report} />
+                <Route exact= {true} path="/ski-model" component={Ski} />
+                <Route component={NoMatch} />
+            </Switch>
+        </div>
+    </Router>
+
     
 
  
