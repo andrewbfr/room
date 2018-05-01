@@ -2,9 +2,13 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const molderSchema = new Schema({
-  nom: { 
+  initials: { 
       type: String, 
       required: true 
+  },
+  username: {
+      type: String, 
+      required: true
   },
   firstName: {
       type: String,
