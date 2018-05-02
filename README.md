@@ -1,1 +1,1 @@
-a daily prodution tracking tool
+a daily production tracking tool for my production room

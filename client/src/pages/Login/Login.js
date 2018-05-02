@@ -5,6 +5,7 @@ class Login extends Component {
         firstName: "",
         lastName: "",
         password: "",
+        username: "",
         validatePassword: ""
     };
 
@@ -21,24 +22,24 @@ class Login extends Component {
                 <form>
                    {/* first name */}
                     <input type = "text" value = {this.state.firstName} onChange = {this.handleInputChange} 
-                    name = "firstName"placeholder = "First Name">
+                    name = "firstName" placeholder = "First Name">
                     </input>
 
                    {/* last name */}
 
                     <input type = "text" value = {this.state.lastName} onChange = {this.handleInputChange} 
-                    name = "lastName"placeholder = "Last Name">
+                    name = "lastName" placeholder = "Last Name">
                     </input>
 
                     {/* user name */}
-                    
+
                     <input type = "text" value = {this.state.userName} onChange = {this.handleInputChange} 
-                    name = "userName"placeholder = "User Name">
+                    name = "userName" placeholder = "User Name">
                     </input>
 
                    {/* password */}
 
-                    <input type = "text" value = {this.state.password} onChange = {this.handleInputChange} name = "password"placeholder = "Password">
+                    <input type = "text" value = {this.state.password} onChange = {this.handleInputChange} name = "password" placeholder = "Password">
                     </input>
 
                    {/* validate password */}
