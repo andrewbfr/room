@@ -25,7 +25,7 @@ const App = () =>
                 <Route exact= {true} path="/qc" component={QC} />
                 <Route exact= {true} path="/report" component={Report} />
                 <Route exact= {true} path="/ski-model" component={Ski} />
-                <Route component={NoMatch} />
+                {/* <Route component={NoMatch} /> */}
             </Switch>
         </div>
     </Router>

@@ -23,6 +23,6 @@ const skiSchema = new Schema({
 });
 
 
-const Ski = mongoose.model("Ski", molderSchema);
+const Ski = mongoose.model("Ski", skiSchema);
 
 module.exports = Ski;

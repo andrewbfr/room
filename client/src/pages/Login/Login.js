@@ -1,11 +1,14 @@
 import React, { Component } from "react";
+import axios from 'axios';
+import Footer from '../../components/Footer';
 
 class Login extends Component {
     state = {
         firstName: "",
         lastName: "",
         password: "",
-        username: "",
+        userName: "",
+        initials: "",
         validatePassword: ""
     };
 
@@ -14,7 +17,55 @@ class Login extends Component {
         this.setState({
             [name]: value
         })
-    }
+    };
+
+    handleRegistration = event => {
+        event.preventDefault();
+        console.log(this.state);
+        const apiBaseUrl = "/api/molder";
+        let payload={
+          "firstName": this.state.firstName,
+          "lastName": this.state.lastName,
+          "password": this.state.password,
+          "userName": this.state.userName,
+          "initials": this.state.newPass
+
+          };
+          if(payload.userName === payload.password){
+            alert(`Username and Password must not match`);
+            console.log(`user name and password must not match`);
+            this.setState({
+              newNom: "",
+              newPass: ""
+            });
+        //   }else{
+        //       //here
+        //     axios.get(apiBaseUrl, payload.userName)
+        //       .then(function(response){
+        //         console.log(response);
+        //         console.log(response.status);
+        //         if(!response.data === true && typeof response.data === "object"){
+        //           console.log(`username ${payload.userName} taken`);
+        //           alert(`username ${payload.userName} taken`); 
+                } else {
+                  axios.post(apiBaseUrl, payload)
+                    .then(function (response) {
+                      console.log(response);
+                      console.log(response.status);
+                      if(response.status === 200){
+                      console.log("Login successful");
+                      window.location.replace("/Articles");
+                      }
+                    })
+                    .catch(function (error) {
+                    console.log(error);
+                    });
+                  }
+             // });
+          //}
+  
+      }
+
     render() {
         return (
             <div>
@@ -47,6 +98,10 @@ class Login extends Component {
                     <input type = "text" value = {this.state.validatePassword} onChange = {this.handleInputChange} name = "validatePassword" placeholder = "Re-type your Password" >
                     </input>
                 </form>
+
+                <button type="button" onClick={this.handleRegistration}>submit</button>
+
+                <Footer />
                 
             </div>
         );

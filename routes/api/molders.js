@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const molderController = require("../../controllers/molderController");
 
-/* so this will align itself with /api/'molders' */
+/* so this will align itself with /api/molder */
 
 router.route("/")
     .get(molderController.findAll)
